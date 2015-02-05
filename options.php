@@ -3,6 +3,7 @@
  * A unique identifier is defined to store the options in the database and reference them from the theme.
  * Turkish theme panel version
  */
+
 function optionsframework_option_name() {
 	// Change this to use your theme slug
 	return 'options-framework-theme';
@@ -101,16 +102,16 @@ function optionsframework_options() {
 
 		$options[] = array(
 		'name' => __( 'Logo Yükle', 'theme-textdomain' ),
-		'desc' => __( 'This creates a full size uploader that previews the image.', 'theme-textdomain' ),
+		'desc' => __( 'Sitenizin header alanında görünecek logoyu buradan yükleyebilir veya mevcut kütüphanenizden seçebilirsiniz.', 'theme-textdomain' ),
 		'id' => 'example_uploader',
 		'type' => 'upload'
 	);
 	
-	$options[] = array( "name" => "Header Kodları",
-					"desc" => "Headerda kullanacağınız kodları buraya yazabilirsiniz.",
-					"id" => "headerkod",
-					"std" => "",
-					"type" => "textarea");
+	$options[] = array( 'name'=> 'Header Kodları',
+					'desc'=> 'Headerda kullanacağınız kodları buraya yazabilirsiniz. &#60;script&#62; &#60;/script &#62; otomatik eklenecektir siz tekrar yazmayın.',
+					'id'=> 'headerkod',
+					'std'=> '',
+					'type'=> 'textarea');
 					
 	if ( $options_categories ) {
 		$options[] = array(
@@ -130,145 +131,175 @@ function optionsframework_options() {
 		);
 	}
 					
-	$options[] = array( "name" => "Footer Kodları",
-					"desc" => "Footerda kullanacağınız kodları buraya yazabilirsiniz.",
-					"id" => "footerkod",
-					"std" => "",
-					"type" => "textarea");
+	$options[] = array( 'name'=> 'Footer Kodları',
+					'desc'=> 'Footerda kullanacağınız kodları buraya yazabilirsiniz. &#60;script&#62; &#60;/script &#62;  otomatik eklenecektir siz tekrar yazmayın.',
+					'id'=> 'footerkod',
+					'std'=> '',
+					'type'=> 'textarea');
 						
-$options[] = array( "name" => "Footer Açıklama",
-					"desc" => "Footerda kullanacağınız telif hakkı metni ve diğer kodları buraya yazabilirsiniz.",
-					"id" => "footer",
-					"std" => "",
-					"type" => "textarea");		
+$options[] = array( 'name'=> 'Footer Açıklama',
+					'desc'=> 'Footerda kullanacağınız telif hakkı metni ve diğer kodları buraya yazabilirsiniz.',
+					'id'=> 'footer',
+					'std'=> '',
+					'type'=> 'text');		
 					
-$options[] = array( "name" => "Meta Keywords",
-					"desc" => "Site etiketlerini girin.SEO için önemlidir.(En fazla 6 tane olmalıdır.Araya virgül koyarak girin.)",
-					"id" => "keyw",
-					"std" => "",
-					"type" => "textarea");
+$options[] = array( 'name'=> 'Meta Keywords',
+					'desc'=> 'Site etiketlerini girin.SEO için önemlidir.(En fazla 6 tane olmalıdır.Araya virgül koyarak girin.)',
+					'id'=> 'keyw',
+					'std'=> '',
+					'type'=> 'text');
 	
-$options[] = array( "name" => "Meta Description",
-					"desc" => "Site açıklamasını girin.SEO için önemlidir.(En fazla 70 karakter olmalıdır.)",
-					"id" => "desc",
-					"std" => "",
-					"type" => "textarea");
+$options[] = array( 'name'=> 'Meta Description',
+					'desc'=> 'Site açıklamasını girin.SEO için önemlidir.(En fazla 70 karakter olmalıdır.)',
+					'id'=> 'desc',
+					'std'=> '',
+					'type'=> 'textarea');
 					
-$options[] = array( "name" => "Özelleştirmeler",
-                    "type" => "heading");
+$options[] = array( 'name'=> 'Özelleştirmeler',
+                    'type'=> 'heading');
 
-					$options[] = array( "name" => "Manşet Seçimi",
-					"desc" => "Anasayfada göstermek için farklı manşet tiplerinden istediğinizi seçebilir veya manşet sistemini kapatabilirsiniz.",
-					"id" => "sliderg",
-					"type" => "select",	
-					"options" => array("Hayır", "Manşet 1", "Manşet 2","Manşet 3","Manşet 4"),
-					"std" => "Manşet 1");
+					$options[] = array( 'name'=> 'Manşet Seçimi',
+					'desc'=> 'Anasayfada göstermek için farklı manşet tiplerinden istediğinizi seçebilir veya manşet sistemini kapatabilirsiniz.',
+					'id'=> 'sliderg',
+					'type'=> 'select',	
+					'std'=> 'Manşet 1',
+					'options' => array(
+					'Hayır' => 'Hayır',
+					'Manşet 1' => 'Manşet 1',
+					'Manşet 2' => 'Manşet 2',
+					'Manşet 3' => 'Manşet 3',
+					'Manşet 4' => 'Manşet 4'
+					)
+					);
 
-					$options[] = array( "name" => "Sayfalama Seçimi",
-					"desc" => "Kullanmak istediğiniz sayfalama türünü seçin.",
-					"id" => "sayfalama",
-					"type" => "select",	
-					"options" => array("Kriesi Sayfalama", "Bootstrap Sayfalama"),
-					"std" => "Kriesi Sayfalama");
-					
-					$options[] = array( "name" => "Sidebar Kategori Listeleme Türü",
-					"desc" => "Kullanmak istediğiniz Sidebar Kategori Listeleme türünü seçin.",
-					"id" => "katliste",
-					"type" => "select",	
-					"options" => array("Bulut", "Liste"),
-					"std" => "Bulut");	
+					$options[] = array( 'name'=> 'Sayfalama Seçimi',
+					'desc'=> 'Kullanmak istediğiniz sayfalama türünü seçin.',
+					'id'=> 'sayfalama',
+					'type'=> 'select',	
+					'std'=> 'Kriesi Sayfalama',
+					'options' => array(
+					'Kriesi Sayfalama' => 'Kriesi Sayfalama',
+					'Bootstrap Sayfalama' => 'Bootstrap Sayfalama')
+					);	
+				
 
-					$options[] = array( "name" => "Logo yada yazı seçimi",
-					"desc" => "Kullanmak istediğiniz header tipini logo türünü seçin.",
-					"id" => "logomu",
-					"type" => "select",	
-					"options" => array("Logo", "Yazı"),
-					"std" => "Yazı");						
-					
-$options[] = array( "name" => "Reklam Alanı",
-                    "type" => "heading");		
+					$options[] = array( 
+					'name'=> 'Sidebar Kategori Listeleme Türü',
+					'desc'=> 'Kullanmak istediğiniz Sidebar Kategori Listeleme türünü seçin.',
+					'id'=> 'katliste',
+					'type'=> 'select',	
+					'std'=> 'Bulut',
+					'options' => array(
+					'Bulut' => 'Bulut',
+					'Liste' => 'Liste')
+					);	
 
-					$options[] = array( "name" => "Sidebar reklam alanı göster",
-					"desc" => "Eğer Eveti seçerseniz sidebar reklamı gözükür.",
-					"id" => "sidebarr",
-					"type" => "select",	
-					"options" => array("Evet", "Hayır"),
-					"std" => "");
+					$options[] = array( 'name'=> 'Logo yada yazı seçimi',
+					'desc'=> 'Kullanmak istediğiniz header tipini logo türünü seçin.',
+					'id'=> 'logomu',
+					'type'=> 'select',	
+					'std'=> 'Yazı',
+					'options' => array(
+					'Logo' => 'Logo',
+					'Yazı' => 'Yazı')
+					);						
+					
+$options[] = array( 'name'=> 'Reklam Alanı',
+                    'type'=> 'heading');		
 
-$options[] = array( "name" => "Sidebar reklam alanı başlığı",
-					"desc" => "Sidebar 300*250 adsense reklam alanı başlığı.",
-					"id" => "sidebarbas",
-					"std" => "",
-					"type" => "text");
+					$options[] = array( 'name'=> 'Sidebar reklam alanı göster',
+					'desc'=> 'Eğer Eveti seçerseniz sidebar reklamı gözükür.',
+					'id'=> 'sidebarr',
+					'type'=> 'select',	
+					'std'=> 'Hayır',
+					'options' => array(
+					'Evet' => 'Evet',
+					'Hayır' => 'Hayır')
+					);
+
+$options[] = array( 'name'=> 'Sidebar reklam alanı başlığı',
+					'desc'=> 'Sidebar 300*250 adsense reklam alanı başlığı.',
+					'id'=> 'sidebarbas',
+					'std'=> '',
+					'type'=> 'text');
 					
-$options[] = array( "name" => "Sidebar reklam alanı",
-					"desc" => "Sidebar 300*250 adsense reklam alanı.",
-					"id" => "sidebar",
-					"std" => "Reklam kodlarınız buraya gelecek",
-					"type" => "textarea");
+$options[] = array( 'name'=> 'Sidebar reklam alanı',
+					'desc'=> 'Sidebar 300*250 adsense reklam alanı.',
+					'id'=> 'sidebar',
+					'std'=> 'Reklam kodlarınız buraya gelecek',
+					'type'=> 'textarea');
 					
-					$options[] = array( "name" => "Yazı üstü reklam alanı göster",
-					"desc" => "Eğer Eveti seçerseniz tekil yazı üstünde reklam gözükür.",
-					"id" => "ustr",
-					"type" => "select",	
-					"options" => array("Evet", "Hayır"),
-					"std" => "Hayır");
-$options[] = array( "name" => "Yazı üstü reklam alanı",
-					"desc" => "Yazı üstü 468*60 adsense reklam alanı.",
-					"id" => "yaziustu",
-					"std" => "Reklam kodlarınız buraya gelecek",
-					"type" => "textarea");	
+					$options[] = array( 'name'=> 'Yazı üstü reklam alanı göster',
+					'desc'=> 'Eğer Eveti seçerseniz tekil yazı üstünde reklam gözükür.',
+					'id'=> 'ustr',
+					'type'=> 'select',	
+					'std'=> 'Hayır',
+					'options' => array(
+					'Evet' => 'Evet',
+					'Hayır' => 'Hayır')
+					);
+$options[] = array( 'name'=> 'Yazı üstü reklam alanı',
+					'desc'=> 'Yazı üstü 468*60 adsense reklam alanı.',
+					'id'=> 'yaziustu',
+					'std'=> 'Reklam kodlarınız buraya gelecek',
+					'type'=> 'textarea');	
 					
-					$options[] = array( "name" => "Yazı altı reklam alanı göster",
-					"desc" => "Eğer Eveti seçerseniz tekil yazı altında reklam gözükür.",
-					"id" => "altr",
-					"type" => "select",	
-					"options" => array("Evet", "Hayır"),
-					"std" => "Hayır");
-$options[] = array( "name" => "Yazı alti reklam alanı",
-					"desc" => "Yazı altinda görünecek 468*60 adsense reklam alanı.",
-					"id" => "yazialti",
-					"std" => "Reklam kodlarınız buraya gelecek",
-					"type" => "textarea");	
+					$options[] = array( 'name'=> 'Yazı altı reklam alanı göster',
+					'desc'=> 'Eğer Eveti seçerseniz tekil yazı altında reklam gözükür.',
+					'id'=> 'altr',
+					'type'=> 'select',	
+					'std'=> 'Hayır',
+					'options' => array(
+					'Evet' => 'Evet',
+					'Hayır' => 'Hayır')
+					);
+$options[] = array( 'name'=> 'Yazı alti reklam alanı',
+					'desc'=> 'Yazı altinda görünecek 468*60 adsense reklam alanı.',
+					'id'=> 'yazialti',
+					'std'=> 'Reklam kodlarınız buraya gelecek',
+					'type'=> 'textarea');	
 
 		
 					
 /* Sosyal Ağ Ayarları */	
-$options[] = array( "name" => __('Sosyal Ağlar','framework_localize'),
-			"type" => "heading");
+$options[] = array( 'name' => __('Sosyal Ağlar','framework_localize'),
+			'type'=> 'heading');
 			
-					$options[] = array( "name" => "Sosyal ağları göster",
-					"desc" => "Eğer Eveti seçerseniz sidebarda sosyal ağlar kutucuğu gözükür.",
-					"id" => "sosyalg",
-					"type" => "select",	
-					"options" => array("Evet", "Hayır"),
-					"std" => "Hayır");
+					$options[] = array( 'name'=> 'Sosyal ağları göster',
+					'desc'=> 'Eğer Eveti seçerseniz sidebarda sosyal ağlar kutucuğu gözükür.',
+					'id'=> 'sosyalg',
+					'type'=> 'select',	
+					'std'=> 'Hayır',
+					'options' => array(
+					'Evet' => 'Evet',
+					'Hayır' => 'Hayır')
+					);
 			
-$options[] = array( "name" => __('Facebook Profil','framework_localize'),
-			"desc" => __('','framework_localize'),
-			"id" => "fb",
-			"std" => "",
-			"type" => "text");
+$options[] = array( 'name' => __('Facebook Profil','framework_localize'),
+			'desc' => __('','framework_localize'),
+			'id'=> 'fb',
+			'std'=> '',
+			'type'=> 'text');
 
 
-			$options[] = array( "name" => __('Google Profil','framework_localize'),
-			"desc" => __('','framework_localize'),
-			"id" => "google",
-			"std" => "",
-			"type" => "text");
+			$options[] = array( 'name' => __('Google Profil','framework_localize'),
+			'desc' => __('','framework_localize'),
+			'id'=> 'google',
+			'std'=> '',
+			'type'=> 'text');
 
 
-$options[] = array( "name" => __('Twitter Profil','framework_localize'),
-			"desc" => __('','framework_localize'),
-			"id" => "twt",
-			"std" => "",
-			"type" => "text");
+$options[] = array( 'name' => __('Twitter Profil','framework_localize'),
+			'desc' => __('','framework_localize'),
+			'id'=> 'twt',
+			'std'=> '',
+			'type'=> 'text');
 
 
-$options[] = array( "name" => __('Youtube  Profil','framework_localize'),
-			"desc" => __('','framework_localize'),
-			"id" => "yb",
-			"std" => "",
-			"type" => "text");	
+$options[] = array( 'name' => __('Youtube  Profil','framework_localize'),
+			'desc' => __('','framework_localize'),
+			'id'=> 'yb',
+			'std'=> '',
+			'type'=> 'text');	
 	return $options;
 }
