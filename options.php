@@ -94,221 +94,180 @@ function optionsframework_options() {
 	$options = array();
 
 	$options[] = array(
-		'name' => __( 'Basic Settings', 'theme-textdomain' ),
+		'name' => __( 'Temel Ayarlar', 'theme-textdomain' ),
 		'type' => 'heading'
 	);
 
-	$options[] = array(
-		'name' => __( 'Input Text Mini', 'theme-textdomain' ),
-		'desc' => __( 'A mini text input field.', 'theme-textdomain' ),
-		'id' => 'example_text_mini',
-		'std' => 'Default',
-		'class' => 'mini',
-		'type' => 'text'
-	);
-
-	$options[] = array(
-		'name' => __( 'Input Text', 'theme-textdomain' ),
-		'desc' => __( 'A text input field.', 'theme-textdomain' ),
-		'id' => 'example_text',
-		'std' => 'Default Value',
-		'type' => 'text'
-	);
-
-	$options[] = array(
-		'name' => __( 'Input with Placeholder', 'theme-textdomain' ),
-		'desc' => __( 'A text input field with an HTML5 placeholder.', 'theme-textdomain' ),
-		'id' => 'example_placeholder',
-		'placeholder' => 'Placeholder',
-		'type' => 'text'
-	);
-
-	$options[] = array(
-		'name' => __( 'Textarea', 'theme-textdomain' ),
-		'desc' => __( 'Textarea description.', 'theme-textdomain' ),
-		'id' => 'example_textarea',
-		'std' => 'Default Text',
-		'type' => 'textarea'
-	);
-
-	$options[] = array(
-		'name' => __( 'Input Select Small', 'theme-textdomain' ),
-		'desc' => __( 'Small Select Box.', 'theme-textdomain' ),
-		'id' => 'example_select',
-		'std' => 'three',
-		'type' => 'select',
-		'class' => 'mini', //mini, tiny, small
-		'options' => $test_array
-	);
-
-	$options[] = array(
-		'name' => __( 'Input Select Wide', 'theme-textdomain' ),
-		'desc' => __( 'A wider select box.', 'theme-textdomain' ),
-		'id' => 'example_select_wide',
-		'std' => 'two',
-		'type' => 'select',
-		'options' => $test_array
-	);
-
-	if ( $options_categories ) {
 		$options[] = array(
-			'name' => __( 'Select a Category', 'theme-textdomain' ),
-			'desc' => __( 'Passed an array of categories with cat_ID and cat_name', 'theme-textdomain' ),
-			'id' => 'example_select_categories',
-			'type' => 'select',
-			'options' => $options_categories
-		);
-	}
-
-	if ( $options_tags ) {
-		$options[] = array(
-			'name' => __( 'Select a Tag', 'options_check' ),
-			'desc' => __( 'Passed an array of tags with term_id and term_name', 'options_check' ),
-			'id' => 'example_select_tags',
-			'type' => 'select',
-			'options' => $options_tags
-		);
-	}
-
-	$options[] = array(
-		'name' => __( 'Select a Page', 'theme-textdomain' ),
-		'desc' => __( 'Passed an pages with ID and post_title', 'theme-textdomain' ),
-		'id' => 'example_select_pages',
-		'type' => 'select',
-		'options' => $options_pages
-	);
-
-	$options[] = array(
-		'name' => __( 'Input Radio (one)', 'theme-textdomain' ),
-		'desc' => __( 'Radio select with default options "one".', 'theme-textdomain' ),
-		'id' => 'example_radio',
-		'std' => 'one',
-		'type' => 'radio',
-		'options' => $test_array
-	);
-
-	$options[] = array(
-		'name' => __( 'Example Info', 'theme-textdomain' ),
-		'desc' => __( 'This is just some example information you can put in the panel.', 'theme-textdomain' ),
-		'type' => 'info'
-	);
-
-	$options[] = array(
-		'name' => __( 'Input Checkbox', 'theme-textdomain' ),
-		'desc' => __( 'Example checkbox, defaults to true.', 'theme-textdomain' ),
-		'id' => 'example_checkbox',
-		'std' => '1',
-		'type' => 'checkbox'
-	);
-
-	$options[] = array(
-		'name' => __( 'Advanced Settings', 'theme-textdomain' ),
-		'type' => 'heading'
-	);
-
-	$options[] = array(
-		'name' => __( 'Check to Show a Hidden Text Input', 'theme-textdomain' ),
-		'desc' => __( 'Click here and see what happens.', 'theme-textdomain' ),
-		'id' => 'example_showhidden',
-		'type' => 'checkbox'
-	);
-
-	$options[] = array(
-		'name' => __( 'Hidden Text Input', 'theme-textdomain' ),
-		'desc' => __( 'This option is hidden unless activated by a checkbox click.', 'theme-textdomain' ),
-		'id' => 'example_text_hidden',
-		'std' => 'Hello',
-		'class' => 'hidden',
-		'type' => 'text'
-	);
-
-	$options[] = array(
-		'name' => __( 'Uploader Test', 'theme-textdomain' ),
+		'name' => __( 'Logo Yükle', 'theme-textdomain' ),
 		'desc' => __( 'This creates a full size uploader that previews the image.', 'theme-textdomain' ),
 		'id' => 'example_uploader',
 		'type' => 'upload'
 	);
+	
+	$options[] = array( "name" => "Header Kodları",
+					"desc" => "Headerda kullanacağınız kodları buraya yazabilirsiniz.",
+					"id" => "headerkod",
+					"std" => "",
+					"type" => "textarea");
+					
+	if ( $options_categories ) {
+		$options[] = array(
+			'name' => __( 'Kategori Seçin', 'theme-textdomain' ),
+			'desc' => __( 'Passed an array of categories with cat_ID and cat_name', 'theme-textdomain' ),
+			'id' => 'katkod1',
+			'type' => 'select',
+			'options' => $options_categories
+		);
+		
+				$options[] = array(
+			'name' => __( 'Kategori Seçin', 'theme-textdomain' ),
+			'desc' => __( 'Passed an array of categories with cat_ID and cat_name', 'theme-textdomain' ),
+			'id' => 'katkod2',
+			'type' => 'select',
+			'options' => $options_categories
+		);
+	}
+					
+	$options[] = array( "name" => "Footer Kodları",
+					"desc" => "Footerda kullanacağınız kodları buraya yazabilirsiniz.",
+					"id" => "footerkod",
+					"std" => "",
+					"type" => "textarea");
+						
+$options[] = array( "name" => "Footer Açıklama",
+					"desc" => "Footerda kullanacağınız telif hakkı metni ve diğer kodları buraya yazabilirsiniz.",
+					"id" => "footer",
+					"std" => "",
+					"type" => "textarea");		
+					
+$options[] = array( "name" => "Meta Keywords",
+					"desc" => "Site etiketlerini girin.SEO için önemlidir.(En fazla 6 tane olmalıdır.Araya virgül koyarak girin.)",
+					"id" => "keyw",
+					"std" => "",
+					"type" => "textarea");
+	
+$options[] = array( "name" => "Meta Description",
+					"desc" => "Site açıklamasını girin.SEO için önemlidir.(En fazla 70 karakter olmalıdır.)",
+					"id" => "desc",
+					"std" => "",
+					"type" => "textarea");
+					
+$options[] = array( "name" => "Özelleştirmeler",
+                    "type" => "heading");
 
-	$options[] = array(
-		'name' => "Example Image Selector",
-		'desc' => "Images for layout.",
-		'id' => "example_images",
-		'std' => "2c-l-fixed",
-		'type' => "images",
-		'options' => array(
-			'1col-fixed' => $imagepath . '1col.png',
-			'2c-l-fixed' => $imagepath . '2cl.png',
-			'2c-r-fixed' => $imagepath . '2cr.png'
-		)
-	);
+					$options[] = array( "name" => "Manşet Seçimi",
+					"desc" => "Anasayfada göstermek için farklı manşet tiplerinden istediğinizi seçebilir veya manşet sistemini kapatabilirsiniz.",
+					"id" => "sliderg",
+					"type" => "select",	
+					"options" => array("Hayır", "Manşet 1", "Manşet 2","Manşet 3","Manşet 4"),
+					"std" => "Manşet 1");
 
-	$options[] = array(
-		'name' =>  __( 'Example Background', 'theme-textdomain' ),
-		'desc' => __( 'Change the background CSS.', 'theme-textdomain' ),
-		'id' => 'example_background',
-		'std' => $background_defaults,
-		'type' => 'background'
-	);
+					$options[] = array( "name" => "Sayfalama Seçimi",
+					"desc" => "Kullanmak istediğiniz sayfalama türünü seçin.",
+					"id" => "sayfalama",
+					"type" => "select",	
+					"options" => array("Kriesi Sayfalama", "Bootstrap Sayfalama"),
+					"std" => "Kriesi Sayfalama");
+					
+					$options[] = array( "name" => "Sidebar Kategori Listeleme Türü",
+					"desc" => "Kullanmak istediğiniz Sidebar Kategori Listeleme türünü seçin.",
+					"id" => "katliste",
+					"type" => "select",	
+					"options" => array("Bulut", "Liste"),
+					"std" => "Bulut");	
 
-	$options[] = array(
-		'name' => __( 'Multicheck', 'theme-textdomain' ),
-		'desc' => __( 'Multicheck description.', 'theme-textdomain' ),
-		'id' => 'example_multicheck',
-		'std' => $multicheck_defaults, // These items get checked by default
-		'type' => 'multicheck',
-		'options' => $multicheck_array
-	);
+					$options[] = array( "name" => "Logo yada yazı seçimi",
+					"desc" => "Kullanmak istediğiniz header tipini logo türünü seçin.",
+					"id" => "logomu",
+					"type" => "select",	
+					"options" => array("Logo", "Yazı"),
+					"std" => "Yazı");						
+					
+$options[] = array( "name" => "Reklam Alanı",
+                    "type" => "heading");		
 
-	$options[] = array(
-		'name' => __( 'Colorpicker', 'theme-textdomain' ),
-		'desc' => __( 'No color selected by default.', 'theme-textdomain' ),
-		'id' => 'example_colorpicker',
-		'std' => '',
-		'type' => 'color'
-	);
+					$options[] = array( "name" => "Sidebar reklam alanı göster",
+					"desc" => "Eğer Eveti seçerseniz sidebar reklamı gözükür.",
+					"id" => "sidebarr",
+					"type" => "select",	
+					"options" => array("Evet", "Hayır"),
+					"std" => "");
 
-	$options[] = array( 'name' => __( 'Typography', 'theme-textdomain' ),
-		'desc' => __( 'Example typography.', 'theme-textdomain' ),
-		'id' => "example_typography",
-		'std' => $typography_defaults,
-		'type' => 'typography'
-	);
+$options[] = array( "name" => "Sidebar reklam alanı başlığı",
+					"desc" => "Sidebar 300*250 adsense reklam alanı başlığı.",
+					"id" => "sidebarbas",
+					"std" => "",
+					"type" => "text");
+					
+$options[] = array( "name" => "Sidebar reklam alanı",
+					"desc" => "Sidebar 300*250 adsense reklam alanı.",
+					"id" => "sidebar",
+					"std" => "Reklam kodlarınız buraya gelecek",
+					"type" => "textarea");
+					
+					$options[] = array( "name" => "Yazı üstü reklam alanı göster",
+					"desc" => "Eğer Eveti seçerseniz tekil yazı üstünde reklam gözükür.",
+					"id" => "ustr",
+					"type" => "select",	
+					"options" => array("Evet", "Hayır"),
+					"std" => "Hayır");
+$options[] = array( "name" => "Yazı üstü reklam alanı",
+					"desc" => "Yazı üstü 468*60 adsense reklam alanı.",
+					"id" => "yaziustu",
+					"std" => "Reklam kodlarınız buraya gelecek",
+					"type" => "textarea");	
+					
+					$options[] = array( "name" => "Yazı altı reklam alanı göster",
+					"desc" => "Eğer Eveti seçerseniz tekil yazı altında reklam gözükür.",
+					"id" => "altr",
+					"type" => "select",	
+					"options" => array("Evet", "Hayır"),
+					"std" => "Hayır");
+$options[] = array( "name" => "Yazı alti reklam alanı",
+					"desc" => "Yazı altinda görünecek 468*60 adsense reklam alanı.",
+					"id" => "yazialti",
+					"std" => "Reklam kodlarınız buraya gelecek",
+					"type" => "textarea");	
 
-	$options[] = array(
-		'name' => __( 'Custom Typography', 'theme-textdomain' ),
-		'desc' => __( 'Custom typography options.', 'theme-textdomain' ),
-		'id' => "custom_typography",
-		'std' => $typography_defaults,
-		'type' => 'typography',
-		'options' => $typography_options
-	);
+		
+					
+/* Sosyal Ağ Ayarları */	
+$options[] = array( "name" => __('Sosyal Ağlar','framework_localize'),
+			"type" => "heading");
+			
+					$options[] = array( "name" => "Sosyal ağları göster",
+					"desc" => "Eğer Eveti seçerseniz sidebarda sosyal ağlar kutucuğu gözükür.",
+					"id" => "sosyalg",
+					"type" => "select",	
+					"options" => array("Evet", "Hayır"),
+					"std" => "Hayır");
+			
+$options[] = array( "name" => __('Facebook Profil','framework_localize'),
+			"desc" => __('','framework_localize'),
+			"id" => "fb",
+			"std" => "",
+			"type" => "text");
 
-	$options[] = array(
-		'name' => __( 'Text Editor', 'theme-textdomain' ),
-		'type' => 'heading'
-	);
 
-	/**
-	 * For $settings options see:
-	 * http://codex.wordpress.org/Function_Reference/wp_editor
-	 *
-	 * 'media_buttons' are not supported as there is no post to attach items to
-	 * 'textarea_name' is set by the 'id' you choose
-	 */
+			$options[] = array( "name" => __('Google Profil','framework_localize'),
+			"desc" => __('','framework_localize'),
+			"id" => "google",
+			"std" => "",
+			"type" => "text");
 
-	$wp_editor_settings = array(
-		'wpautop' => true, // Default
-		'textarea_rows' => 5,
-		'tinymce' => array( 'plugins' => 'wordpress' )
-	);
 
-	$options[] = array(
-		'name' => __( 'Default Text Editor', 'theme-textdomain' ),
-		'desc' => sprintf( __( 'You can also pass settings to the editor.  Read more about wp_editor in <a href="%1$s" target="_blank">the WordPress codex</a>', 'theme-textdomain' ), 'http://codex.wordpress.org/Function_Reference/wp_editor' ),
-		'id' => 'example_editor',
-		'type' => 'editor',
-		'settings' => $wp_editor_settings
-	);
+$options[] = array( "name" => __('Twitter Profil','framework_localize'),
+			"desc" => __('','framework_localize'),
+			"id" => "twt",
+			"std" => "",
+			"type" => "text");
 
+
+$options[] = array( "name" => __('Youtube  Profil','framework_localize'),
+			"desc" => __('','framework_localize'),
+			"id" => "yb",
+			"std" => "",
+			"type" => "text");	
 	return $options;
 }
